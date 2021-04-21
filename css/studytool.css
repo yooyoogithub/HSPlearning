@@ -32,7 +32,7 @@ select {
 }
 
 .info {
-  width: 70%;
+  width: 60%;
 }
 
 .hannaimage {
@@ -119,7 +119,7 @@ select {
 .body {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-left: 10px;
   font-size: 25px;
   align-items: center;
@@ -132,14 +132,18 @@ select {
 
 #menudisplay {
   position: relative;
-  width: 185px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  text-align: center;
 }
 .studymenu {
   width: 130px;
   height: 70px;
   padding: 3px;
-  font-weight: bold;
   margin-top: 5px;
+  margin-left: 20px;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 20px rgba(70, 44, 44, 0.5);
   border-radius: 10px;

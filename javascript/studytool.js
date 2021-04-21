@@ -524,12 +524,6 @@ function addbookselect() {
     }else {
 
     }
-    VanillaTilt.init(document.querySelectorAll(".studymenu"), {
-        max: 25,
-        speed: 400,
-        glare: true,
-        "max-glare":3,
-    });
 }
 
 function addunit() {
@@ -1036,7 +1030,7 @@ function speechenglish(txt){
     }
 
     utterThis.lang = lang;
-    utterThis.pitch = 1;
+    utterThis.pitch = 1.2;
     utterThis.rate = 0.8; //속도
     window.speechSynthesis.speak(utterThis);
 
