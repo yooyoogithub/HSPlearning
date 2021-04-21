@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+    <!--외부 스타일시트 참조 원래는 <style> </style>-->
+    <link href="css/newphonics.css" rel="stylesheet" type="text/css">
+
+    <!--외부 JavaScript 참조-->
+    <script type="text/javascript" src="javascript/newphonics.js"></script>
+</head>
+<body onload="getCurrentTime()">
+    <header class="header1">
+        <div>You are an authorized individual.</div>
+    </header>
+    <header class="header2">
+        <div>
+            <img src="HSP2.PNG" width="100px" height="40px" style="vertical-align: center;">
+            Welcome to Hansol Plus English Phonics Play!!
+            <img src="HSP3.PNG" width="100px"height="40px" style="vertical-align: center;">
+        </div>
+    </header>
+    <section>
+        <nav>
+            <div style="color:black">
+                <br>
+                <div style="color:blue">교재선택</div>
+                <select name="book" id="book">
+                  <option value="Alphabet Phonics">Alphabet Phonics</option>
+                  <option value="Easy Phonics">Easy Phonics</option>
+                  <option value="Easy Phonics Plus">Easy Phonics Plus</option>
+                  <option value="Phonics Fun 1">Phonics Fun 1</option>
+                  <option value="Phonics Fun 2">Phonics Fun 2</option>
+                  <option value="Phonics Fun 3">Phonics Fun 3</option>
+                  <option value="Phonics Town 1">Phonics Town 1</option>
+                  <option value="Phonics Town 2">Phonics Town 2</option>
+                  <option value="Phonics Town 3">Phonics Town 3</option>
+                  <option value="Theme English 1">Theme English 1</option>
+                  <option value="Theme English 2">Theme English 2</option>
+                  <option value="Theme English 3">Theme English 3</option>
+                  <option value="Theme English 4">Theme English 4</option>
+                  <option value="Theme English 5">Theme English 5</option>
+                  <option value="Theme English 6">Theme English 6</option>
+                </select>
+              </div>
+              <br>              
+              <div style="color:blue;text-align:center;">유닛선택</div>
+              <div>
+                Unit 1: <input type="checkbox" class="realcheckbox" name="unit" value="1"><br>
+                Unit 2: <input type="checkbox" class="realcheckbox" name="unit" value="2"><br>
+                Unit 3: <input type="checkbox" class="realcheckbox" name="unit" value="3"><br>
+                Unit 4: <input type="checkbox" class="realcheckbox" name="unit" value="4"><br>
+                Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5"><br>
+                Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6"><br>
+                Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7"><br>
+                Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+                Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9"><br>
+                Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10"><br>
+                Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11"><br>
+                Unit 12: <input type="checkbox" class="realcheckbox" name="unit" value="12"><br>
+                Unit 13: <input type="checkbox" class="realcheckbox" name="unit" value="13"><br>
+                Unit 14: <input type="checkbox" class="realcheckbox" name="unit" value="14"><br>
+                Unit 15: <input type="checkbox" class="realcheckbox" name="unit" value="15"><br>
+              </div>
+              <div>
+                <hr>전체유닛: <input type="checkbox" class="realcheckbox" name="unit" value="16">
+              <hr>
+              <input type="button" class="realbutton" value="선택완료" name="choose" onclick="Getunits()">
+              <br><br>
+                <!--NO 이미지:<input type="checkbox" class="realcheckbox" name="nopicture" id="np">-->
+        </nav>
+        <container>
+            <article class="article1" id="title">
+                    <div>학습을 시작하기 위해서 교재와 유닛을 선택해 주세요.</div>
+            </article>
+            <article class="article2" id="main">
+              <img src="HSPC.PNG" width="100%" height="100%" id="mainimg">
+              <iframe id="mainframe" style="display:none"></iframe>
+            </article>
+            <article class="article3" id="sub">
+                    <div>Welcome to Hansol Plus English Phoincs Learning Play!!</div>
+            </article>
+            <article class="article4" id="sbutton">
+                <input class="realbutton" type="button" id="startstudy" value="학습시작" onclick="StartStudy()">
+            </article>
+        </container>
+        <aside>
+            <div style="color: blue;">
+                Statistics
+              </div>
+    
+              <div>
+                <div style="background-color:beige;">최초접속시간</div>
+                <div class="count" id="firstcon"></div>
+                <hr>
+                <div style="background-color: beige;">현재시간</div>
+                <div class="count" id="connectTime" class="connectedTime"></div>
+              </div>
+              <hr>
+              <div style="background-color: beige;">학습시간</div>
+              <div class="count" id="totalstudytime"></div>
+              <div class="count" id="endstudytime"></div>
+              <div class="count" id="realstudytime"></div>
+              <hr>
+              <div style="background-color: beige;">반복횟수</div>
+              <div id="repeat"></div>
+              <hr>
+              <div id="repeatnumber"></div>
+              <hr>
+              <div style="background-color: beige;">확인학습점수</div>
+              <div id="playscore"></div>
+              <hr>
+              <div>
+                <input type="button" style="width: 100px;height: 40px;" value="학습시간보기" name="sendresult" onclick="SendResult()">
+              </div>
+        </aside>
+    </section>
+    <footer>
+        This page is made by Charlie. If it has any problem, contact us through Kakao ID "yoyocacao".
+    </footer>
+</body>
+</html> 

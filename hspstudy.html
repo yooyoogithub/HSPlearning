@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>한솔플러스영어 학습</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/studytool.css" type="text/css">
+    <!--<link rel="stylesheet" href="css/newphonics.css" type="text/css">-->
+    <script type="text/javascript" src="javascript/vanilla-tilt.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="javascript/studytool.js" type="text/javascript"></script>
+    <script type="text/javascript" src="javascript/newphonics.js"></script>
+</head>
+<body onload="getCurrentTime()">
+    <div class="main">
+        <div class="container">
+            <div class="titleimage">
+                <div class="logo">
+                    <img src="/src/HSP.PNG" alt="" width="180px" style="top:50%">
+                </div>
+            </div>
+            <div class="info">
+                <div class="studentinfo">
+                    <span>STUDENT NAME <input type="text" name="sn" id="sn"></span>
+                    <span>STUDENT GRADE <input type="text" name="sg" id="sg"> </span>
+                </div>
+                <hr>
+                <div class="menu">
+                    <span class="choice">
+                        <span>CLASSIFICATION</span>
+                        <select name="booktype" id="booktype" class="booktype" onchange="addbookselect()">
+                            <option value="Phonics">Phonics</option>
+                            <option value="Power Voca">Power Voca</option>
+                            <option value="Story Town">Story Town</option>
+                            <option value="Reading Town">Reading Town</option>
+                            <option value="Speaking">Speaking</option>
+                            <option value="Reader's Solution">Reader's Solution</option>
+                            <option value="Grammar">Grammar</option>
+                            <option value="AIOL">All in One Listening</option>
+                        </select>
+                    </span>
+                    <span class="choice">
+                        <span>BOOK LEVEL</span>
+                        <span id="bookselect">
+                            <select name="bookname" id="bookname" class="bookname" onchange="addunit()">
+                                <option value="Alphabet Phonics">Alphabet Phonics</option>
+                                <option value="Easy Phonics">Easy Phonics</option>
+                                <option value="Easy Phonics Plus">Easy Phonics Plus</option>
+                                <option value="Phonics Fun 1">Phonics Fun 1</option>
+                                <option value="Phonics Fun 2">Phonics Fun 2</option>
+                                <option value="Phonics Fun 3">Phonics Fun 3</option>
+                                <option value="Phonics Town 1">Phonics Town 1</option>
+                                <option value="Phonics Town 2">Phonics Town 2</option>
+                                <option value="Phonics Town 3">Phonics Town 3</option>
+                            </select>
+                        </span>
+                    </span>
+                    <div class="unitchoice">
+                        <span><font color="red">STEP</font></span>
+                        <span id="unitselect">
+                                Unit 1: <input type="checkbox" class="realcheckbox" name="unit" value="1">
+                                Unit 2: <input type="checkbox" class="realcheckbox" name="unit" value="2">
+                                Unit 3: <input type="checkbox" class="realcheckbox" name="unit" value="3">
+                                Unit 4: <input type="checkbox" class="realcheckbox" name="unit" value="4">
+                                Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
+                                Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
+                                Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
+                                Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+                                Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
+                                Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
+                                Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
+                                Unit 12: <input type="checkbox" class="realcheckbox" name="unit" value="12">
+                                Unit 13: <input type="checkbox" class="realcheckbox" name="unit" value="13">
+                                Unit 14: <input type="checkbox" class="realcheckbox" name="unit" value="14">
+                                Unit 15: <input type="checkbox" class="realcheckbox" name="unit" value="15">
+                                전체유닛: <input type="checkbox" class="realcheckbox" name="unit" value="16">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="hannaimage">
+                <img src="/src/HannaHello.PNG" alt="" width="43px">
+            </div>
+        </div>
+        <div class="body">
+            <div id="menudisplay">
+                <div class="studymenu" id='ps'>
+                    PHONICS STUDY
+                </div>
+                <div class="studymenu" id='p1'>
+                    PHONICS PLAY #1
+                </div>
+                <div class="studymenu" id='p2'>
+                    PHONICS PLAY #2
+                </div>
+                <div class="studymenu" id='p3'>
+                    PHONICS PLAY #3
+                </div>
+                <div class="studymenu" id='p4'>
+                    PHONICS PLAY #4
+                </div>
+                <div class="studymenu" id='p5'>
+                    PHONICS PLAY #5
+                </div>
+                <div class="studymenu" id='p6'>
+                    PHONICS PLAY #6
+                </div>                 
+            </div>
+            <div class='upperplayground' id='upperplayground'>
+                <div class='playground' id='playground'>
+                    <div class="question" id='question'>
+                        <div id="showtextanimation">
+                            <!--<input type="button" value="PRESS THIS BUTTON" onclick="changewords()">
+                            BODY-->
+                        </div>
+                        <!--<input type="button" value="글자타이핑" onclick="typingletters()"><br>--->
+                        <div id="typing"></div>
+                    </div>
+                    <div class="examples" id='examples'>
+                        <span class="sb" id='sb' onclick="studystart()">
+                            <div class="content" id='content'>
+                                <h2>Ready</h2>
+                                <h3>선택</h3>
+                            </div>
+                        </span>
+
+                        <!--<div id="choicenum">
+                            <span class="card">
+                                <div class="content">
+                                    <h2>01</h2>
+                                    <h3>CARD ONE</h3>
+                                </div>
+                            </span>
+                            <span class="card">
+                                <div class="content">
+                                    <h2>02</h2>
+                                    <h3>CARD TWO</h3>                            
+                                </div>
+                            </span>
+                            <span class="card">
+                                <div class="content">
+                                    <h2>03</h2>
+                                    <h3>CARD THREE</h3>
+                                </div>
+                            </span>
+                            <span class="card">
+                                <div class="content">
+                                    <h2>04</h2>
+                                    <h3>CARD FOUR</h3>
+                                </div>
+                            </span>
+                            <span class="card">
+                                <div class="content">
+                                    <h2>05</h2>
+                                    <h3>CARD FIVE</h3>
+                                </div>
+                            </span>
+                        </div>-->
+                    </div>
+                </div>
+                <div id='progressbardiv'>
+                    <div class="progressbar">
+                        <div class="progress" id="progress">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="result">
+            <aside>
+                <div style="color: blue;">
+                    Statistics
+                </div>
+                <span style="background-color:beige;"><font color="red">최초접속시간</font></span>
+                <span class="count" id="firstcon"></span>                    
+                <span style="background-color: beige;"><font color="red">현재시간</font></span>
+                <span class="count" id="connectTime" class="connectedTime"></span>
+                <span style="background-color: beige;"><font color="red">학습시간</font></span>
+                <span class="count" id="totalstudytime"></span>
+                <span class="count" id="endstudytime"></span>
+                <span class="count" id="realstudytime"></span>
+                <span style="background-color: beige;"><font color="red">반복횟수</font></span>
+                <span id="repeat"></span>
+                <span id="repeatnumber"></span>
+                <span style="background-color: beige;">확인학습점수</span>
+                <span id="playscore"></span>
+                <span>
+                    <input type="button" style="width: 100px;height: 40px;" value="학습시간보기" name="sendresult" onclick="SendResult()">
+                </span>
+            </aside>
+        </div>
+    </div>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 800,
+            glare: true,
+            "max-glare":3,
+        });
+        VanillaTilt.init(document.querySelectorAll(".studymenu"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare":3,
+        });
+        VanillaTilt.init(document.querySelectorAll(".question"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare":3,
+        }); 
+        VanillaTilt.init(document.querySelectorAll(".titleimage"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare":3,
+        });      
+        VanillaTilt.init(document.querySelectorAll(".hannaimage"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare":3,
+        });  
+        VanillaTilt.init(document.querySelectorAll(".sb"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare":3,
+        });      
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="javascript/login.js"></script>
+        
+</head>
+<body>
+    <section class="loginform">
+        <img src="src/loginlogo.png" alt="" width="300px" height="150px">
+        <form action="">
+            <div class="int-area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">USER NAME</label>
+            </div>
+            <div class="int-area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">PASSWORD</label>
+            </div>
+            <div class="btn-area">                
+                <button id="btn" type="submit" onclick="logincheck()">LOGIN</button>
+            </div>
+        </form>
+        <div class="caption">
+            <a href="">Forgot Password?</a>
+            <a href="">신규등록</a>
+        </div>
+    </section>
+
+    
+</body>
+</html>
