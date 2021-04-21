@@ -1899,8 +1899,8 @@
         myaudio.currentTime=0;
 
         if(wordstudycount < selecteditem.length){
-          main.innerHTML = '<img src="'+ 'data/'+ bookselected + '/' + selecteditem[wordstudycount][1]+'" width="300px" height="300px">';
-          myaudio.src = 'data/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
+          main.innerHTML = '<img src="'+ 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][1]+'" width="300px" height="300px">';
+          myaudio.src = 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
 
           myaudio.play();
           
@@ -1981,7 +1981,7 @@
 
         if(wordstudycount < selecteditem.length){
           main.innerHTML = "<br><br><br><span style='font-size:126px;text-align:center;'>"+selecteditem[wordstudycount][3]+"</span>";
-          myaudio.src = 'data/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
+          myaudio.src = 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
 
           myaudio.play();
 
@@ -2158,92 +2158,92 @@
 
          //randnum2 = 1;
           if(randnum2==1){
-            q1 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
-            problemaudiosource = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
+            q1 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            problemaudiosource = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q2 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q2 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q3 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q3 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q4 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q4 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
           }
           else if(randnum2==2){
-            q2 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
-            problemaudiosource = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
+            q2 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            problemaudiosource = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q1 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q1 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q3 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q3 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q4 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q4 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
           }
           else if(randnum2==3){
-            q3 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
-            problemaudiosource = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
+            q3 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            problemaudiosource = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q1 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q1 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q2 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q2 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q4 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q4 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
           }
           else
           {
-            q4 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
-            problemaudiosource = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
+            q4 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            problemaudiosource = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][3];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q1 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q1 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q2 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q2 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
 
             randnum = Math.random()*(tempplayui.length-1);
             randnum = Math.floor(randnum)+1;
-            q3 = 'data/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
+            q3 = '/'+tempplayui[randnum][0]+'/'+tempplayui[randnum][2];
             tempplayui.splice(randnum,1);
           }
 
-          centerquestionimage = '<span class="questionimage">1<img src="'+q1+'" width="200px" height="180px" onclick="imageclick(1)"></span>'
-            +'<span class="questionimage">2<img src="'+q2+'"width="200px" height="180px" onclick="imageclick(2)"></span>'
+          centerquestionimage = '<span class="questionimage">1<img src="https://github.com/yooyoogithub/ulsanHSP'+q1+'" width="200px" height="180px" onclick="imageclick(1)"></span>'
+            +'<span class="questionimage">2<img src="https://github.com/yooyoogithub/ulsanHSP'+q2+'"width="200px" height="180px" onclick="imageclick(2)"></span>'
             +'<div> ---- </div>'
-            +'<span class="questionimage">3<img src="'+q3+'" width="200px" height="180px" onclick="imageclick(3)"></span>'
-            +'<span class="questionimage">4<img src="'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
+            +'<span class="questionimage">3<img src="https://github.com/yooyoogithub/ulsanHSP'+q3+'" width="200px" height="180px" onclick="imageclick(3)"></span>'
+            +'<span class="questionimage">4<img src="https://github.com/yooyoogithub/ulsanHSP'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
             +'<br><br><div><input class="justbutton" type="button" style="height:40px;" value="준비되면 누르세요." onclick="playquestion()"></div>';
 
           // 그림출력
