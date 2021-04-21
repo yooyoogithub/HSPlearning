@@ -1096,6 +1096,8 @@ function wordsgame01(notpv){
 
     typingletters("다음 단어의 빈칸에 알맞은 알파벳을 선택하세요.");
 
+    wordsanswer.splice(0,wordsanswer.length);
+
     if(studywords.length > 0){
         loop = 0;
         wordsgame01routine(notpv);
@@ -1103,8 +1105,6 @@ function wordsgame01(notpv){
         alert("학습할 단어가 없습니다.");
         EndStudy();
     }
-
-    wordsanswer.splice(0,wordsanswer.length);
     
     /*
     console.log(studywords[0][0]);
@@ -1159,7 +1159,6 @@ function checkanswer(correct, notpv){
 
     if(ox){
         speechenglish(correct);
-
         alert("정답입니다.");
         totalproblem++;
         correctanswer++;
@@ -1198,7 +1197,7 @@ function questionstring(str){
     madequestion = tempstr;
 
     for(let i=0;i<randcount;i++){
-        tempstr = tempstr.replace(`_`,    `<select id="selectedalphabet${i}" class="selectalphabet">
+        tempstr = tempstr.replace(`_`,      `<select id="selectedalphabet${i}" class="selectalphabet">
                                             <option value="none">?</option>
                                             <option value="a">a</option>
                                             <option value="b">b</option>
@@ -1231,4 +1230,3 @@ function questionstring(str){
 
     return tempstr;
 }
-

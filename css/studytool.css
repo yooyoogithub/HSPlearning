@@ -121,7 +121,7 @@ select {
 .body {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 25px;
   align-items: center;
   text-align: center;
@@ -134,8 +134,8 @@ select {
 #menudisplay {
   position: relative;
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  /*width: 100%;*/
   align-items: center;
   text-align: center;
 }
@@ -307,7 +307,8 @@ select {
   width: 200px;
   height: 180px;
   margin: 10px;
-  left: 70px;
+  left: 50%;
+  transform: translateX(-90px);
   box-shadow: 20px 20px 50px rgba(70, 44, 44, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
@@ -372,10 +373,12 @@ select {
 }
 
 .examples {
+  position: relative;
+  /*display: flex;*/
   overflow: auto;
+  align-items: center;
+  text-align: center;
   height: 70%;
-  margin-left: 0%;
-  margin-right: 0%;
 }
 
 /*여기서 부터는 newphoincs.css에 내용*/
