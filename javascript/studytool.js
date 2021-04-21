@@ -736,7 +736,7 @@ function progress(interval){
             counter += 1;
             prg.style.width = progress + '%';
             prg.innerHTML = counter + '%';
-            if(counter > 60){
+            /*if(counter > 60){
                 if(changecolor == true){
                     prg.style.backgroundColor = "red";
                     changecolor = false;
@@ -744,7 +744,7 @@ function progress(interval){
                     prg.style.backgroundColor = "blueviolet";
                     changecolor = true;
                 }
-            }
+            }*/
         }
     }
 }
@@ -822,12 +822,6 @@ if(totalfirst){
 
 function EndStudy(){
     document.getElementById('playground').innerHTML = recover;
-    VanillaTilt.init(document.querySelectorAll(".sb"), {
-        max: 25,
-        speed: 400,
-        glare: true,
-        "max-glare":3,
-    });     
     studywords.splice(0,studywords.length);
 }
 
@@ -1109,6 +1103,8 @@ function wordsgame01(notpv){
         alert("학습할 단어가 없습니다.");
         EndStudy();
     }
+
+    wordsanswer.splice(0,wordsanswer.length);
     
     /*
     console.log(studywords[0][0]);
@@ -1140,6 +1136,7 @@ function wordsgame01routine(notpv){
                             `;
         loop++;
     }
+    
 }
 
 function checkanswer(correct, notpv){
@@ -1162,10 +1159,16 @@ function checkanswer(correct, notpv){
 
     if(ox){
         speechenglish(correct);
+
         alert("정답입니다.");
+        totalproblem++;
+        correctanswer++;
+        document.getElementById('playscore').innerHTML = totalproblem + "개 중 "+correctanswer+"개 정답";
     }else{
         speechenglish(correct);
         alert(`틀렸습니다. 정답은 ${correct} 입니다.`);
+        totalproblem++;
+        document.getElementById('playscore').innerHTML = totalproblem + "개 중 "+correctanswer+"개 정답";
     }
 
     wordsanswer.splice(0,wordsanswer.length);
@@ -1228,3 +1231,4 @@ function questionstring(str){
 
     return tempstr;
 }
+
