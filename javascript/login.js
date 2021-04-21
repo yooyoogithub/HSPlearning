@@ -11,7 +11,7 @@ function logincheck(){
     let selectedFile = new XMLHttpRequest();
 
     //selectedFile.open("GET","https://yooyoogithub.github.io/HSPELT/data/grammar_1.xlsx"); //파일명의 길이도 문제가 되는 것 같음. 짧게 유지
-    selectedFile.open("GET","http://127.0.0.1:5500/data/login.xlsx");
+    selectedFile.open("GET","https://github.com/yooyoogithub/HSPlearning/data/login.xlsx");
     selectedFile.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
     selectedFile.responseType = "blob"; //Blob형식으로 부탁합니다!
     selectedFile.send();  //위 요청을 보낸다.
