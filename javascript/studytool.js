@@ -40,7 +40,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -216,7 +216,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             전체유닛: <input type="checkbox" class="realcheckbox" name="unit" value="16">
@@ -274,7 +274,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -332,7 +332,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -383,7 +383,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -438,7 +438,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -489,7 +489,7 @@ function addbookselect() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -539,7 +539,7 @@ function addunit() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -555,7 +555,7 @@ function addunit() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -635,7 +635,7 @@ function addunit() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">
@@ -651,7 +651,7 @@ function addunit() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             전체유닛: <input type="checkbox" class="realcheckbox" name="unit" value="16">
@@ -665,7 +665,7 @@ function addunit() {
             Unit 5: <input type="checkbox" class="realcheckbox" name="unit" value="5">
             Unit 6: <input type="checkbox" class="realcheckbox" name="unit" value="6">
             Unit 7: <input type="checkbox" class="realcheckbox" name="unit" value="7">
-            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8"><br>
+            Unit 8: <input type="checkbox" class="realcheckbox" name="unit" value="8">
             Unit 9: <input type="checkbox" class="realcheckbox" name="unit" value="9">
             Unit 10: <input type="checkbox" class="realcheckbox" name="unit" value="10">
             Unit 11: <input type="checkbox" class="realcheckbox" name="unit" value="11">

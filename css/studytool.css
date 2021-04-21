@@ -11,6 +11,7 @@ select {
   margin: 5px;
   border-style: inset;
   font-family: "Noto Sans KR", sans-serif;
+  font-weight: 350;
 }
 
 .container,
@@ -67,7 +68,7 @@ select {
   font-size: 20px;
   border-style: soild;
   color: rgb(255, 255, 255);
-  box-shadow: 4px 4px rgb(68, 68, 68);
+  /*box-shadow: 4px 4px rgb(68, 68, 68);*/
 }
 
 .menu {
@@ -83,32 +84,33 @@ select {
   border-style: solid;
   border-color: black;
   border-width: thin;
-  box-shadow: 3px 4px 2px rgb(68, 68, 68);
+  /*box-shadow: 3px 4px 2px rgb(68, 68, 68);*/
 }
 
 .studentinfo {
   position: relative;
-  top: 0;
+  /*top: 0;*/
   background-color: white;
-  padding-bottom: 10px;
-  padding-top: 7px;
+  /*padding-bottom: 10px;
+  padding-top: 7px;*/
   align-items: center;
   text-align: center;
   color: black;
   border-radius: 5px;
-  font-family: "Poppins", sans-serif;
   border-style: solid;
+  font-family: "Poppins", sans-serif;
+  /*border-style: solid;*/
   border-color: black;
   border-width: thin;
-  box-shadow: 3px 4px 2px rgb(68, 68, 68);
+  /*box-shadow: 3px 4px 2px rgb(68, 68, 68);*/
 }
 
 .studentinfo > span {
   padding: 2px;
-  background-color: #000770a9;
+  /*background-color: #000770a9;
   color: rgb(255, 255, 255);
   border: solid;
-  box-shadow: 1px 1px 2px rgb(68, 68, 68);
+  box-shadow: 1px 1px 2px rgb(68, 68, 68);*/
   font-size: 20px;
 }
 
@@ -120,7 +122,6 @@ select {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
   font-size: 25px;
   align-items: center;
   text-align: center;
@@ -138,12 +139,13 @@ select {
   align-items: center;
   text-align: center;
 }
+
 .studymenu {
-  width: 130px;
-  height: 70px;
+  width: 80px;
+  height: 50px;
   padding: 3px;
   margin-top: 5px;
-  margin-left: 20px;
+  margin-left: 10px;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 20px rgba(70, 44, 44, 0.5);
   border-radius: 10px;
@@ -152,6 +154,7 @@ select {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
+  font-size: 16px;
 }
 
 .studymenu:hover {
@@ -302,7 +305,6 @@ select {
 .sb {
   position: relative;
   display: block;
-  left: 30%;
   width: 200px;
   height: 180px;
   margin: 10px;
@@ -372,8 +374,8 @@ select {
 .examples {
   overflow: auto;
   height: 70%;
-  margin-left: 20%;
-  margin-right: 15%;
+  margin-left: 0%;
+  margin-right: 0%;
 }
 
 /*여기서 부터는 newphoincs.css에 내용*/
