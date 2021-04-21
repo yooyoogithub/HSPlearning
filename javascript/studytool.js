@@ -844,7 +844,7 @@ function pvsavestudydata(){
 
     // test 파일 불러와서 json 파일로 만들기
     let selectedFile = new XMLHttpRequest();
-    selectedFile.open("GET","/data/pvmaindata.xlsx"); //파일명의 길이도 문제가 되는 것 같음. 짧게 유지
+    selectedFile.open("GET","https://yooyoogithub.github.io/HSPlearning/data/pvmaindata.xlsx"); //파일명의 길이도 문제가 되는 것 같음. 짧게 유지
     selectedFile.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
     selectedFile.responseType = "blob"; //Blob형식으로 부탁합니다!
     selectedFile.send();  //위 요청을 보낸다.
@@ -903,7 +903,7 @@ function savestudydata(){
 
     // test 파일 불러와서 json 파일로 만들기
     let selectedFile = new XMLHttpRequest();
-    selectedFile.open("GET","/data/maindata.xlsx"); //파일명의 길이도 문제가 되는 것 같음. 짧게 유지
+    selectedFile.open("GET","https://yooyoogithub.github.io/HSPlearning/data/maindata.xlsx"); //파일명의 길이도 문제가 되는 것 같음. 짧게 유지
     selectedFile.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
     selectedFile.responseType = "blob"; //Blob형식으로 부탁합니다!
     selectedFile.send();  //위 요청을 보낸다.
@@ -1199,8 +1199,6 @@ function questionstring(str){
     }
 
     madequestion = tempstr;
-
-    console.log('01 : '+madequestion);
 
     for(let i=0;i<randcount;i++){
         tempstr = tempstr.replace(`_`,    `<select id="selectedalphabet${i}" class="selectalphabet">
