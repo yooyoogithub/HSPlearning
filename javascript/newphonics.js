@@ -1899,8 +1899,8 @@
         myaudio.currentTime=0;
 
         if(wordstudycount < selecteditem.length){
-          main.innerHTML = '<img src="'+ 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][1]+'" width="300px" height="300px">';
-          myaudio.src = 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
+          main.innerHTML = '<img src="'+ 'https://yooyoogithub.github.io/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][1]+'" width="300px" height="300px">';
+          myaudio.src = 'https://yooyoogithub.github.io/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
 
           myaudio.play();
           
@@ -1981,7 +1981,7 @@
 
         if(wordstudycount < selecteditem.length){
           main.innerHTML = "<br><br><br><span style='font-size:126px;text-align:center;'>"+selecteditem[wordstudycount][3]+"</span>";
-          myaudio.src = 'https://github.com/yooyoogithub/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
+          myaudio.src = 'https://yooyoogithub.github.io/ulsanHSP/'+ bookselected + '/' + selecteditem[wordstudycount][2];            
 
           myaudio.play();
 
@@ -2239,11 +2239,11 @@
             tempplayui.splice(randnum,1);
           }
 
-          centerquestionimage = '<span class="questionimage">1<img src="https://github.com/yooyoogithub/ulsanHSP'+q1+'" width="200px" height="180px" onclick="imageclick(1)"></span>'
-            +'<span class="questionimage">2<img src="https://github.com/yooyoogithub/ulsanHSP'+q2+'"width="200px" height="180px" onclick="imageclick(2)"></span>'
+          centerquestionimage = '<span class="questionimage">1<img src="https://yooyoogithub.github.io/ulsanHSP/'+q1+'" width="200px" height="180px" onclick="imageclick(1)"></span>'
+            +'<span class="questionimage">2<img src="https://yooyoogithub.github.io/ulsanHSP/'+q2+'"width="200px" height="180px" onclick="imageclick(2)"></span>'
             +'<div> ---- </div>'
-            +'<span class="questionimage">3<img src="https://github.com/yooyoogithub/ulsanHSP'+q3+'" width="200px" height="180px" onclick="imageclick(3)"></span>'
-            +'<span class="questionimage">4<img src="https://github.com/yooyoogithub/ulsanHSP'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
+            +'<span class="questionimage">3<img src="https://yooyoogithub.github.io/ulsanHSP/'+q3+'" width="200px" height="180px" onclick="imageclick(3)"></span>'
+            +'<span class="questionimage">4<img src="https://yooyoogithub.github.io/ulsanHSP/P'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
             +'<br><br><div><input class="justbutton" type="button" style="height:40px;" value="준비되면 누르세요." onclick="playquestion()"></div>';
 
           // 그림출력
