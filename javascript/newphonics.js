@@ -2243,7 +2243,7 @@
             +'<span class="questionimage">2<img src="https://yooyoogithub.github.io/ulsanHSP/'+q2+'"width="200px" height="180px" onclick="imageclick(2)"></span>'
             +'<div> ---- </div>'
             +'<span class="questionimage">3<img src="https://yooyoogithub.github.io/ulsanHSP/'+q3+'" width="200px" height="180px" onclick="imageclick(3)"></span>'
-            +'<span class="questionimage">4<img src="https://yooyoogithub.github.io/ulsanHSP/P'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
+            +'<span class="questionimage">4<img src="https://yooyoogithub.github.io/ulsanHSP/'+q4+'" width="200px" height="180px" onclick="imageclick(4)"></span>'
             +'<br><br><div><input class="justbutton" type="button" style="height:40px;" value="준비되면 누르세요." onclick="playquestion()"></div>';
 
           // 그림출력
