@@ -1759,6 +1759,7 @@
         }
         else{
           alert("choice has not been made yet!!");
+          EndStudy();
         }        
     }
 

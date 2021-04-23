@@ -132,7 +132,7 @@ select {
   font-size: 25px;
   align-items: center;
   text-align: center;
-  height: 650px;
+  height: 620px;
   overflow: auto;
   border-radius: 20px;
   background-color: rgba(255, 230, 0, 0.712);
@@ -387,7 +387,7 @@ select {
   overflow: auto;
   align-items: center;
   text-align: center;
-  height: 60%;
+  height: 85%;
 }
 
 /*여기서 부터는 newphoincs.css에 내용*/
