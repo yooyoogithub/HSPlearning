@@ -37,8 +37,6 @@ select {
   position: relative;
   display: flex;
   flex-direction: row;
-  left: 50%;
-  transform: translateX(-250px);
   width: 100%;
 }
 
@@ -150,8 +148,8 @@ select {
 }
 
 .studymenu {
-  width: 80px;
-  height: 50px;
+  width: 50px;
+  height: 35px;
   padding: 3px;
   margin-top: 5px;
   margin-left: 10px;
@@ -163,7 +161,8 @@ select {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
-  font-size: 16px;
+  font-size: 10px;
+  font-weight: lighter;
 }
 
 /*.studymenu:hover {
