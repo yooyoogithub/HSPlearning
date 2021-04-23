@@ -186,7 +186,7 @@ function addbookselect() {
         document.getElementById('bookselect').innerHTML = `
         <select name="bookname" id="bookname" class="bookname" onchange="addunit()">
             <option value="ST1-1">Story Town 1-1</option>
-            <option value="ST-2">Story Town 1-2</option>
+            <option value="ST1-2">Story Town 1-2</option>
             <option value="ST1-3">Story Town 1-3</option>
             <option value="ST1-4">Story Town 1-4</option>
             <option value="ST1-5">Story Town 1-5</option>
