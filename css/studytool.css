@@ -24,6 +24,7 @@ select {
 .container {
   position: relative;
   display: flex;
+  flex-direction: column;
   padding: 5px;
   top: 0;
   background-color: rgba(255, 230, 0, 0.712);
@@ -33,17 +34,24 @@ select {
 }
 
 .info {
-  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  left: 50%;
+  transform: translateX(-250px);
+  width: 100%;
 }
 
 .hannaimage {
-  margin-left: 15px;
-  margin-top: 20px;
+  margin-left: 10px;
   overflow: hidden;
 }
 
 .titleimage {
   margin-right: 20px;
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 5px;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 5px 20px rgba(70, 44, 44, 0.5);
   border-radius: 10px;
@@ -96,7 +104,7 @@ select {
   align-items: center;
   text-align: center;
   color: black;
-  border-radius: 5px;
+  border-radius: 10px;
   border-style: solid;
   font-family: "Poppins", sans-serif;
   /*border-style: solid;*/
@@ -121,11 +129,12 @@ select {
 .body {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-tracks: center;
   font-size: 25px;
   align-items: center;
   text-align: center;
-  height: 670px;
+  height: 650px;
   overflow: auto;
   border-radius: 20px;
   background-color: rgba(255, 230, 0, 0.712);
@@ -134,7 +143,7 @@ select {
 #menudisplay {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /*width: 100%;*/
   align-items: center;
   text-align: center;
@@ -168,7 +177,7 @@ select {
   display: block;
   border: solid;
   border-style: ridge;
-  height: 580px;
+  height: 500px;
   width: 97%;
   margin: 10px;
   overflow: hidden;
@@ -368,7 +377,8 @@ select {
 
 .question {
   overflow: hidden;
-  height: 30%;
+  height: 15%;
+  font-size: 16px;
   background-color: rgba(255, 230, 0, 0.712);
 }
 
@@ -378,7 +388,7 @@ select {
   overflow: auto;
   align-items: center;
   text-align: center;
-  height: 70%;
+  height: 60%;
 }
 
 /*여기서 부터는 newphoincs.css에 내용*/
