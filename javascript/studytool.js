@@ -13,10 +13,15 @@ let studysentence = [];
 let voices = [];
 let wordsanswer = []; //각 select에서 선택된 option value 저장
 let madequestion; //단어 게임에서 만들어진 거 보관
+let speechpitch = 1.2; //목소리 피치
+let speechrate = 0.8; //목소리 빠르기
+let lang = 'en-US'; //목소리 언어
+//let lang = 'ko-KR';
+
+speechenglish("none");
 
 function addbookselect() {
     let booktype = document.getElementById('booktype').value;
-
 
     if (booktype === 'Phonics') { //Phonics를 선택했을 때
         document.getElementById('bookselect').innerHTML = `
@@ -811,7 +816,14 @@ function studystart(){
             document.getElementById('sb').setAttribute("onClick","playpv()");
             //주어진 책의 종류에 따른 학습 방식을 표시
         }else{
-            alert("Choice has not been made!!");
+            lang="ko-KR";
+            speechpitch = 1;
+            speechrate = 1; 
+            speechenglish("유닛이 선택되지 않았습니다.");
+            lang="en-US";
+            speechpitch = 1.2;
+            speechrate = 0.8; 
+            //alert("Choice has not been made!!");
             EndStudy();
         }
     }else{
@@ -835,7 +847,14 @@ function studystart(){
             document.getElementById('sb').setAttribute("onClick","playstory()");            
             //주어진 책의 종류에 따른 학습 방식을 표시
         }else{
-            alert("Choice has not been made!!");
+            lang="ko-KR";
+            speechpitch = 1;
+            speechrate = 1; 
+            speechenglish("유닛이 선택되지 않았습니다.");
+            lang="en-US";
+            speechpitch = 1.2;
+            speechrate = 0.8; 
+            //alert("Choice has not been made!!");
             EndStudy();
         }
     }
@@ -1032,8 +1051,6 @@ function speechenglish(txt){
         return;
     }
 
-    //let lang = 'ko-KR';
-    let lang = 'en-US';
     let utterThis = new SpeechSynthesisUtterance(txt);
 
     utterThis.onend = function (event) {
@@ -1048,7 +1065,7 @@ function speechenglish(txt){
 
     for(let i = 0; i < voices.length ; i++) {
         if(voices[i].lang.indexOf(lang) >= 0 || voices[i].lang.indexOf(lang.replace('-', '_')) >= 0) {
-            utterThis.voice = voices[i];
+            utterThis.voice = voices[i];  // 목소리 종류 
             voiceFound = true;
         }
     }
@@ -1059,8 +1076,8 @@ function speechenglish(txt){
     }
 
     utterThis.lang = lang;
-    utterThis.pitch = 1.2;
-    utterThis.rate = 0.8; //속도
+    utterThis.pitch = speechpitch;
+    utterThis.rate = speechrate; //속도
     window.speechSynthesis.speak(utterThis);
 
     /*
@@ -1126,7 +1143,7 @@ function wordslearning(notpv){
             progress(40);
             loop++;
     }, 4000);
-      
+    
 }
 
 function wordsgame01(notpv){
@@ -1229,7 +1246,7 @@ function wordsgame01routine(notpv){
 
         }
 
-        examples.innerHTML = `  <h1>${question_kor}</h1>
+        examples.innerHTML = `  <h2>${question_kor}</h2>
                                 <hr>
                                 <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},1,${notpv})">${q1}</button>
                                 <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},2,${notpv})">${q2}</button>
@@ -1405,6 +1422,14 @@ function questionstring(str){
 function sentencelearning(notpv){
     let question = document.getElementById('question');
     let examples = document.getElementById('examples');
+    let sl = document.getElementById('sl');
+    let wl = document.getElementById('wl');
+
+    wl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+    wl.style.color = "black";
+
+    sl.style.backgroundColor = "blueviolet";
+    sl.style.color = "white";
 
     if(notpv){
         //Power Voca가 아니면
@@ -1439,7 +1464,10 @@ function sentencelearning(notpv){
                 examples.innerHTML = `<h3>${studysentence[loop][0]}</h3><br>
                                     <h3>${studysentence[loop][1]}</h3>`;
     
+                speechpitch = 1;
                 speechenglish(studysentence[loop][0]);
+                speechpitch = 1.2;
+                speechrate = 0.8; 
                 //problemaudiosource = `words/eng/${studywords[loop][0]}_eng.mp3`;
                 //playquestion();
                 progress(40);

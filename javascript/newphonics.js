@@ -1758,7 +1758,14 @@
           alert(whatchosen);
         }
         else{
-          alert("choice has not been made yet!!");
+          lang="ko-KR";
+          speechpitch = 1;
+          speechrate = 1; 
+          speechenglish("유닛이 선택되지 않았습니다.");
+          lang="en-US";
+          speechpitch = 1.2;
+          speechrate = 0.8; 
+          //alert("choice has not been made yet!!");
           EndStudy();
         }        
     }
