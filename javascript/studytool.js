@@ -83,6 +83,15 @@ function addbookselect() {
             <option value="3">Power Voca 3</option>
             <option value="4">Power Voca 4</option>
             <option value="5">Power Voca 5</option>
+        </select>
+        `;
+        /*document.getElementById('bookselect').innerHTML = `
+        <select name="bookname" id="bookname" class="bookname" onchange="addunit()">
+            <option value="1">Power Voca 1</option>
+            <option value="2">Power Voca 2</option>
+            <option value="3">Power Voca 3</option>
+            <option value="4">Power Voca 4</option>
+            <option value="5">Power Voca 5</option>
             <option value="6">Power Voca 6</option>
             <option value="7">Power Voca 7</option>
             <option value="8">Power Voca 8</option>
@@ -94,7 +103,7 @@ function addbookselect() {
             <option value="14">Power Voca 고등 숙어</option>
             <option value="15">Power Voca 대학 숙어</option>
         </select>
-        `;
+        `;*/
 
         document.getElementById('unitselect').innerHTML = `
             Unit 1: <input type="checkbox" class="realcheckbox" name="unit" value="1">
