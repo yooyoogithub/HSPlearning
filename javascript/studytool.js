@@ -1089,11 +1089,11 @@ function wordslearning(notpv){
     speechenglish("Ready?");
 
     //이거 없애고 
-    wordsgame01(notpv); 
+    //wordsgame01(notpv); 
 
     // 여기서 부터 건너뛰기
     
-    /*
+   
     examples.innerHTML = '<div></div>';
 
     let si = setInterval(()=>{
@@ -1118,7 +1118,7 @@ function wordslearning(notpv){
             progress(40);
             loop++;
     }, 4000);
-    */
+    
 }
 
 function wordsgame01(notpv){
