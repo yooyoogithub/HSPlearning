@@ -1102,7 +1102,6 @@ function wordslearning(notpv){
 
     // 여기서 부터 건너뛰기
     
-   
     examples.innerHTML = '<div></div>';
 
     let si = setInterval(()=>{
@@ -1127,7 +1126,7 @@ function wordslearning(notpv){
             progress(40);
             loop++;
     }, 4000);
-    
+      
 }
 
 function wordsgame01(notpv){
@@ -1232,11 +1231,11 @@ function wordsgame01routine(notpv){
 
         examples.innerHTML = `  <h1>${question_kor}</h1>
                                 <hr>
-                                <button class="qbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},1,${notpv})">${q1}</button>
-                                <button class="qbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},2,${notpv})">${q2}</button>
+                                <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},1,${notpv})">${q1}</button>
+                                <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},2,${notpv})">${q2}</button>
                                 <div></div>
-                                <button class="qbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},3,${notpv})">${q3}</button>
-                                <button class="qbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},4,${notpv})">${q4}</button>
+                                <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},3,${notpv})">${q3}</button>
+                                <button class="smallqbutton" width="200px" height="190px" onclick="wordsgame01answerclick(${answer},4,${notpv})">${q4}</button>
                                 <hr>
                                 <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="wordsgame01(${notpv})">
                                 <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="wordsgame02(${notpv})">

@@ -465,6 +465,29 @@ select {
   cursor: pointer;
 }
 
+.smallqbutton {
+  font-family: "Poppins", sans-serif;
+  font-size: large;
+  width: 150px;
+  height: 45px;
+  padding: 3px;
+  margin-top: 5px;
+  margin-left: 3px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 20px rgb(70 44 44 / 50%);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.smallqbutton:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
 /*여기까지는 newphoincs.css에 내용*/
 
 .selectalphabet {
