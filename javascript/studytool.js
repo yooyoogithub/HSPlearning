@@ -1171,6 +1171,8 @@ function wordsgame01(notpv){
 
 }
 
+let answerstrforworsgame01;
+
 function wordsgame01routine(notpv){
 
     let question = document.getElementById('question');
@@ -1192,6 +1194,7 @@ function wordsgame01routine(notpv){
             strwhole.push(studywords[i]);
         }
         question_kor = strwhole[loop][1]; //문제의 한글을 담는 변수        
+        answerstrforworsgame01 = strwhole[loop][0];
         let randno = Math.floor(Math.random()*4)+1; //정답을 넣을 번호 랜덤
 
         if(randno == 1){
@@ -1267,6 +1270,8 @@ function wordsgame01routine(notpv){
 }
 
 function wordsgame01answerclick(answer,useranswer,notpv){
+
+    speechenglish(answerstrforworsgame01);
 
     if(answer!=0){
       if(answer==useranswer){
