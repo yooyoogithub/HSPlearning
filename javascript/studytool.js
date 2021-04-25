@@ -17,6 +17,8 @@ let speechpitch = 1.2; //목소리 피치
 let speechrate = 0.8; //목소리 빠르기
 let lang = 'en-US'; //목소리 언어
 //let lang = 'ko-KR';
+let uplistno; //문장게임할때 위 쪽 리스트 넘버
+let downlistno; //문장게임할때 아래 쪽 리스트 넘버
 
 speechenglish("none");
 
@@ -1114,11 +1116,13 @@ function wordslearning(notpv){
 
     speechenglish("Ready?");
 
+    repeatcount++;
+
     //이거 없애고 
     //wordsgame01(notpv); 
 
     // 여기서 부터 건너뛰기
-    
+        
     examples.innerHTML = '<div></div>';
 
     let si = setInterval(()=>{
@@ -1430,7 +1434,7 @@ function sentencelearning(notpv){
 
     sl.style.backgroundColor = "blueviolet";
     sl.style.color = "white";
-
+    
     if(notpv){
         //Power Voca가 아니면
 
@@ -1442,6 +1446,10 @@ function sentencelearning(notpv){
                 }
         }
 
+        //아래꺼 한 줄 지울꺼 
+        sentencegame01(notpv);
+        // 복원 할것
+        /*
         loop = 0;
     
         speechenglish("Ready?");
@@ -1477,7 +1485,16 @@ function sentencelearning(notpv){
     }else{
         //Power Voca가 맞으면
         alert("Power Voca는 문장학습을 지원하지 않습니다.");
+        let sl = document.getElementById('sl');
+        let wl = document.getElementById('wl');
+
+        wl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        wl.style.color = "black";
+
+        sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        sl.style.color = "black";
         EndStudy();
+    */    
     }
 }
 
@@ -1486,17 +1503,205 @@ function sentencegame01(notpv){
     let question = document.getElementById('question');
     let examples = document.getElementById('examples');
 
+    typingletters("아래 문장에 들어갈 각 단어들을 차례대로 [보기]에서 찾아 클릭하세요.");
+
     if(notpv){
         //Power Voca가 아니라면
-
-
+        if(studysentence.length>0){
+            loop = 0;
+            sentencegame01routine();
+        }
+        else{
+            alert("공부할 문장이 없습니다.");
+            EndStudy();
+        }
 
     }else{
-        //Power Voca 라면
+        //Power Voca가 맞으면
+        alert("Power Voca는 문장게임을 지원하지 않습니다.");
+        let sl = document.getElementById('sl');
+        let wl = document.getElementById('wl');
 
+        wl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        wl.style.color = "black";
 
+        sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        sl.style.color = "black";
+        EndStudy();
+    }
+}
+
+function SliceSentence(sentence){
+    let a = '';
+    let slicedsentence = [];
+    let i;
+    for(i=0;i<sentence[0].length;i++){
+   
+        if(sentence[0][i] != ' '){      //공백이 아니고
+            if(sentence[0][i] != ','){  //쉼표는 건너띄고
+                if(sentence[0][i] != '.'){
+                    if(sentence[0][i] != '!'){ 
+                        if(sentence[0][i] != '?'){ //마침표, 물음표, 느낌표는 따로 저장
+                            a = a + sentence[0][i];
+                        }
+                    }
+                }
+            }
+        }else{
+            //공백을 만나면 
+            slicedsentence.push(a);
+            a='';
+        }
+    }
+    slicedsentence.push(a); //마지막꺼 저장
+    if((sentence[0][i-1] == '.') || (sentence[0][i-1] == '!') || (sentence[0][i-1] == '?')){ //마침표, 물음표, 느낌표는 따로 저장
+        slicedsentence.push(sentence[0][i-1]); //마지막 문장부호 저장
     }
 
-    EndStudy();
+    return slicedsentence;
+}
 
+function sentencegame01routine(){
+
+    let question = document.getElementById('question');
+    let examples = document.getElementById('examples');
+
+    if(loop<studysentence.length){
+        let str = studysentence[loop][1][0]; //질문의 한글
+        let slicedsentence = SliceSentence(studysentence[loop][0]); //
+        let answer = '';
+        uplistno = slicedsentence.length;
+        downlistno = slicedsentence.length;
+        for(let i=0;i<slicedsentence.length;i++){
+            answer = answer + slicedsentence[i];
+        }
+        let qstr = ''; //영어 문제 칸
+        for(let i=0;i<slicedsentence.length;i++){
+            qstr = qstr + "<input class='sentencebutton' type='button' id='sbq"+i+"' value='________' onclick='sentencegame01remove(this)'>";   
+        }
+        let slicedbuttons = ''; //문장으로 된 버튼들
+        let until = slicedsentence.length
+        for(let i=0;i<until;i++){
+            let randno = Math.floor(Math.random()*slicedsentence.length);
+            slicedbuttons = slicedbuttons + "<input class='sentencebutton' type='button' id='sba"+i+"' value='"+slicedsentence[randno]+"' onclick='sentencegame01add(this)'>";
+            slicedsentence.splice(randno,1);
+        }
+        examples.innerHTML = `  <div id='englishwithblank'>${qstr}</div>
+                                <div id='korean'>${str}</div><hr>
+                                <h3>[보기]</h3>
+                                <div id='englishslicedbuttons'>${slicedbuttons}</div>
+                                <hr>
+                                <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="sentencegame01()">
+                                <input class="realbutton" type="button" id="endstudy" value="다음" onclick="sentencecheckanswer('${answer}')">
+                                <input class="realbutton" type="button" id="endstudy" value="스피킹학습" onclick="speakinglearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
+                            `;
+        loop++;
+    }else{
+        alert("첫번째 문장게임이 끝났습니다.");
+        let sl = document.getElementById('sl');
+        let wl = document.getElementById('wl');
+
+        wl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        wl.style.color = "black";
+
+        sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        sl.style.color = "black";
+        EndStudy();
+    }
+}
+
+function sentencecheckanswer(answer){
+    let useranswer = '';
+
+    for(let i=0;i<uplistno;i++){
+        let uplistname;
+        uplistname = 'sbq'+i;
+        useranswer = useranswer + document.getElementById(uplistname).value;
+    }
+    
+    speechpitch = 1;
+    speechrate = 0.5;
+    speechenglish(studysentence[loop-1][0][0]);            
+    speechpitch = 1.2;
+    speechrate = 0.8; 
+
+    if(answer!=0){
+        if(answer==useranswer){
+            totalproblem++;
+            correctanswer++;
+            document.getElementById('playscore').innerHTML = totalproblem + "개 중 "+correctanswer+"개 정답";
+            alert("정답입니다~~^^");
+            sentencegame01routine();
+        }
+        else{
+            totalproblem++;
+            document.getElementById('playscore').innerHTML = totalproblem + "개 중 "+correctanswer+"개 정답";
+            alert("아쉬워요, 틀렸어요....ㅠㅠ");
+            sentencegame01routine();
+        }
+    }
+    else{
+        alert("아직 문제가 출제되지 않았거나, 정답이 정해지지 않았습니다.");
+        EndStudy();
+    }
+}
+
+function sentencegame01remove(item){
+    let up = document.getElementById('englishwithblank');
+    let down = document.getElementById('englishslicedbuttons');
+
+    if(item.value != '________'){
+        //아래쪽에 마지막에 첨가
+        down.innerHTML = down.innerHTML + "<input class='sentencebutton' type='button' id='sba"+downlistno+"' value='"+item.value+"' onclick='sentencegame01add(this)'>";
+        downlistno++;
+
+        //위쪽에서 클릭된것을 제거
+        item.value = '________';
+    }
+    
+}
+
+function sentencegame01add(item){
+    let up = document.getElementById('englishwithblank');
+    let down = document.getElementById('englishslicedbuttons');
+
+    let tempstr = '';
+
+    //아래쪽에 마지막에 위에 첨가
+    for(let i=0;i<uplistno;i++){
+        let sbqname = 'sbq'+i;
+        let sbq_value = document.getElementById(sbqname).value;
+        if(sbq_value == '________'){
+            document.getElementById(sbqname).value = item.value;
+            break;
+        }
+    }
+
+    //아래에서 클릭된것을 제거
+    let j = 0;
+
+    for(let i=0;i<downlistno;i++){
+        let sbaname = 'sba'+i;
+        let sba_value = document.getElementById(sbaname).value;
+        if(sba_value != item.value){
+            tempstr = tempstr + "<input class='sentencebutton' type='button' id='sba"+j+"' value='"+sba_value+"' onclick='sentencegame01add(this)'>"
+            j++;
+        }else{
+            //건너뜀
+        }
+    }
+    downlistno--;
+    down.innerHTML = tempstr;
+
+}
+
+function speakinglearning(){
+    let question = document.getElementById('question');
+    let examples = document.getElementById('examples');
+
+    examples.innerHTML = `  <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
+                            <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="">
+                            <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
+                        `;
 }

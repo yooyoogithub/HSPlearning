@@ -1372,7 +1372,7 @@
     let choiceismade;
 
     // 전체 몇번 Repeat 했는지 카운트 하는 변수
-    let repeatcount = -1;
+    let repeatcount = 0;
 
     // 선택된 책의 이름을 담는 변수
     let bookselected;
@@ -1438,7 +1438,7 @@
         StopStudy();
 
         //교재가 다시 시작되므로 반복횟수는 0으로 재설정
-        repeatcount = -1;
+        repeatcount = 0;
         let repeatshow  = document.getElementById("repeat");
         let repeatnumber  = document.getElementById("repeatnumber");
         let tellrepeat="";
@@ -1779,6 +1779,9 @@
         let tempmin=0;
         let tempsec=0;
         let tempstring="";
+        let repeatnumber  = document.getElementById("repeatnumber");
+        
+        repeatnumber.innerHTML = "<span style='font-color:blue;'>[반복횟수 : " + repeatcount + " 번]</span>"
 
         endstudytime.innerHTML="<font color='red'>[학습종료]</font>"+endTime.getHours()+"시"+endTime.getMinutes()+"분"+endTime.getSeconds()+"초";
 

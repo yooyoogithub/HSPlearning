@@ -499,3 +499,12 @@ select {
   font-size: 50px;
   font-weight: bold;
 }
+
+.sentencebutton {
+  font-size: 20px;
+  border-style: none;
+  cursor: pointer;
+  margin-right: 5px;
+  background-color: #ff9d00;
+  border-radius: 5px;
+}
