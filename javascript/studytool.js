@@ -13,8 +13,8 @@ let studysentence = [];
 let voices = [];
 let wordsanswer = []; //각 select에서 선택된 option value 저장
 let madequestion; //단어 게임에서 만들어진 거 보관
-let speechpitch = 1.2; //목소리 피치
-let speechrate = 0.8; //목소리 빠르기
+let speechpitch = 1.0; //목소리 피치
+let speechrate = 0.7; //목소리 빠르기
 let lang = 'en-US'; //목소리 언어
 //let lang = 'ko-KR';
 let uplistno; //문장게임할때 위 쪽 리스트 넘버
@@ -1445,9 +1445,9 @@ function sentencelearning(notpv){
         }
 
         //아래꺼 한 줄 지울꺼 
-        sentencegame01(notpv);
+        //sentencegame01(notpv);
         // 복원 할것
-        /*
+        
         loop = 0;
     
         speechenglish("Ready?");
@@ -1471,6 +1471,7 @@ function sentencelearning(notpv){
                                     <h3>${studysentence[loop][1]}</h3>`;
     
                 speechpitch = 1;
+                speechrate = 0.6; 
                 speechenglish(studysentence[loop][0]);
                 speechpitch = 1.2;
                 speechrate = 0.8; 
@@ -1492,7 +1493,8 @@ function sentencelearning(notpv){
         sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
         sl.style.color = "black";
         EndStudy();
-    */    
+    // 여기까지 묶으면 됨.
+      
     }
 }
 
