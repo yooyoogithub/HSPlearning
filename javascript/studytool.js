@@ -1342,9 +1342,6 @@ function checkanswer(correct, notpv){
         madequestion = madequestion.replace(`_`, document.getElementById(tempid).value);
     }
 
-    console.log(correct.toUpperCase());
-    console.log(madequestion.toUpperCase());
-
     if(correct.toUpperCase() != madequestion.toUpperCase()){
         ox = false;
     }
@@ -1371,8 +1368,9 @@ function questionstring(str){
     let randcount = Math.floor((str.length/100)*70);
 
     if(str.length == 1){
+        wordsanswer.push(tempstr[0]);
         tempstr = '_';
-        randcound = 1;
+        randcount = 1;
     }else{
         for(let i=0;i<randcount;){
             let randnum = Math.floor(Math.random()*tempstr.length);
