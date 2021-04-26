@@ -19,6 +19,7 @@ let lang = 'en-US'; //목소리 언어
 //let lang = 'ko-KR';
 let uplistno; //문장게임할때 위 쪽 리스트 넘버
 let downlistno; //문장게임할때 아래 쪽 리스트 넘버
+let answerstrforworsgame01; //단어게임 01에서 정답음성을 출력하기 위해 영어 정답 단어를 담는 변수
 
 speechenglish("none");
 
@@ -1122,7 +1123,7 @@ function wordslearning(notpv){
     //wordsgame01(notpv); 
 
     // 여기서 부터 건너뛰기
-        
+    
     examples.innerHTML = '<div></div>';
 
     let si = setInterval(()=>{
@@ -1170,8 +1171,6 @@ function wordsgame01(notpv){
     }
 
 }
-
-let answerstrforworsgame01;
 
 function wordsgame01routine(notpv){
 
@@ -1499,7 +1498,7 @@ function sentencelearning(notpv){
         sl.style.color = "black";
         EndStudy();
     // 여기까지 묶으면 됨.
-      
+    
     }
 }
 
@@ -1577,8 +1576,14 @@ function sentencegame01routine(){
         let answer = '';
         uplistno = slicedsentence.length;
         downlistno = slicedsentence.length;
+
+        //작은 따음표(') 제외하고 저장
         for(let i=0;i<slicedsentence.length;i++){
-            answer = answer + slicedsentence[i];
+            for(let j=0;j<slicedsentence[i].length;j++){
+                if(slicedsentence[i][j] != "'"){
+                    answer = answer + slicedsentence[i][j];
+                }
+            }
         }
         let qstr = ''; //영어 문제 칸
         for(let i=0;i<slicedsentence.length;i++){
@@ -1588,16 +1593,17 @@ function sentencegame01routine(){
         let until = slicedsentence.length
         for(let i=0;i<until;i++){
             let randno = Math.floor(Math.random()*slicedsentence.length);
-            slicedbuttons = slicedbuttons + "<input class='sentencebutton' type='button' id='sba"+i+"' value='"+slicedsentence[randno]+"' onclick='sentencegame01add(this)'>";
+            slicedbuttons = slicedbuttons + `<input class="sentencebutton" type="button" id="sba${i}"' value="${slicedsentence[randno]}" onclick="sentencegame01add(this)">`;
             slicedsentence.splice(randno,1);
         }
+
         examples.innerHTML = `  <div id='englishwithblank'>${qstr}</div>
                                 <div id='korean'>${str}</div><hr>
                                 <h3>[보기]</h3>
                                 <div id='englishslicedbuttons'>${slicedbuttons}</div>
                                 <hr>
                                 <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="sentencegame01()">
-                                <input class="realbutton" type="button" id="endstudy" value="다음" onclick="sentencecheckanswer('${answer}')">
+                                <input class="realbutton" type="button" id="endstudy" value="다음" onclick='sentencecheckanswer("${answer}")'>
                                 <input class="realbutton" type="button" id="endstudy" value="스피킹학습" onclick="speakinglearning()">
                                 <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
                             `;
@@ -1618,13 +1624,20 @@ function sentencegame01routine(){
 
 function sentencecheckanswer(answer){
     let useranswer = '';
-
+    let tempuseranswer = '';
+    
     for(let i=0;i<uplistno;i++){
         let uplistname;
         uplistname = 'sbq'+i;
-        useranswer = useranswer + document.getElementById(uplistname).value;
+        tempuseranswer = tempuseranswer + document.getElementById(uplistname).value;
     }
-    
+
+    for(let i=0;i<tempuseranswer.length;i++){
+        if(tempuseranswer[i] != "'"){
+            useranswer = useranswer + tempuseranswer[i];
+        }
+    }
+
     speechpitch = 1;
     speechrate = 0.5;
     speechenglish(studysentence[loop-1][0][0]);            
@@ -1704,6 +1717,22 @@ function sentencegame01add(item){
 function speakinglearning(){
     let question = document.getElementById('question');
     let examples = document.getElementById('examples');
+
+    let wl = document.getElementById('wl');
+    let s = document.getElementById('s');
+
+    sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+    sl.style.color = "black";
+
+    s.style.backgroundColor = "blueviolet";
+    s.style.color = "white";
+
+    /*
+    s.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+    s.style.color = "black";
+    */
+
+    
 
     examples.innerHTML = `  <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
                             <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="">
