@@ -1451,7 +1451,7 @@ function sentencelearning(notpv){
         //아래꺼 한 줄 지울꺼 
         //sentencegame01(notpv);
         // 복원 할것
-        
+
         loop = 0;
     
         speechenglish("Ready?");
@@ -1498,7 +1498,6 @@ function sentencelearning(notpv){
         sl.style.color = "black";
         EndStudy();
     // 여기까지 묶으면 됨.
-    
     }
 }
 
@@ -1513,7 +1512,7 @@ function sentencegame01(notpv){
         //Power Voca가 아니라면
         if(studysentence.length>0){
             loop = 0;
-            sentencegame01routine();
+            sentencegame01routine(notpv);
         }
         else{
             alert("공부할 문장이 없습니다.");
@@ -1565,7 +1564,7 @@ function SliceSentence(sentence){
     return slicedsentence;
 }
 
-function sentencegame01routine(){
+function sentencegame01routine(notpv){
 
     let question = document.getElementById('question');
     let examples = document.getElementById('examples');
@@ -1604,7 +1603,7 @@ function sentencegame01routine(){
                                 <hr>
                                 <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="sentencegame01()">
                                 <input class="realbutton" type="button" id="endstudy" value="다음" onclick='sentencecheckanswer("${answer}")'>
-                                <input class="realbutton" type="button" id="endstudy" value="스피킹학습" onclick="speakinglearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="스피킹학습" onclick="speakinglearning(${notpv})">
                                 <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
                             `;
         loop++;
@@ -1714,7 +1713,7 @@ function sentencegame01add(item){
 
 }
 
-function speakinglearning(){
+function speakinglearning(notpv){
     let question = document.getElementById('question');
     let examples = document.getElementById('examples');
 
@@ -1732,10 +1731,156 @@ function speakinglearning(){
     s.style.color = "black";
     */
 
-    
+    if(notpv){
+        //Power Voca가 아니면
 
-    examples.innerHTML = `  <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
-                            <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="">
+        typingletters("다음 읽어주는 문장을 읽은 뒤 [녹음시작]버튼을 누르고 읽으세요.");
+
+        loop = 0;
+    
+        speechenglish("Ready?");
+
+        examples.innerHTML = '<div></div>';
+    
+        speakinglearningroutine(notpv);
+
+    }else{
+        //Power Voca가 맞으면
+        alert("Power Voca는 문장학습을 지원하지 않습니다.");
+        let sl = document.getElementById('sl');
+        let wl = document.getElementById('wl');
+        let s = document.getElementById('s');
+
+        wl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        wl.style.color = "black";
+
+        sl.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        sl.style.color = "black";
+        
+        s.style.backgroundColor = "rgba(255, 230, 0, 0.712)";
+        s.style.color = "black";
+
+        EndStudy();
+    // 여기까지 묶으면 됨.
+    
+    }
+
+    
+}
+
+function speakinglearningroutine(notpv){
+    let question = document.getElementById('question');
+    let examples = document.getElementById('examples');
+
+    typingletters("다음 읽어주는 문장을 읽은 뒤 [녹음시작]버튼을 누르고 읽으세요.");
+
+
+    if(loop < studysentence.length){
+
+        speechpitch = 1.1;
+        speechrate = 0.6; 
+        speechenglish(studysentence[loop][0]);
+        speechpitch = 1.2;
+        speechrate = 0.8; 
+        progress(40);
+        
+        examples.innerHTML = `  <h3>${studysentence[loop][0]}</h3><br>
+                                <h3>${studysentence[loop][1]}</h3>
+                                <hr>
+                                <input class="realbutton" type="button" id="startstudy" value="녹음시작" onclick="speakingrecognition(${notpv})">
+                                <hr>
+                                <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="grammarlearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
+                            `;
+
+        loop++;
+    }else{
+        alert("Speaking 학습이 끝났습니다.");
+        examples.innerHTML = `  <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="grammarlearning()">
+                                <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
+                            `;
+    }
+}
+
+
+function speakingrecognition(notpv){
+    let question = document.getElementById('question');
+    let examples = document.getElementById('examples');
+
+    let text;
+
+    typingletters("완료되면 [녹음 끝] 버튼을 누르세요.");
+
+    examples.innerHTML = `  <div id="speakingp">_____________________</div><br>
+                            <h3>${studysentence[loop-1][1]}</h3>
+                            <hr>
+                            <input class="realbutton" type="button" id="startstudy" value="녹음 끝" onclick="speakinglearningroutine(${notpv})">
+                            <hr>
+                            <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="speakinglearning()">
+                            <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="grammarlearning()">
                             <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
                         `;
+
+    //1단계 : 음성 녹음
+    //let grammar = '#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;'
+
+    let p = document.getElementById('speakingp');
+
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    let recognition = new window.SpeechRecognition();
+    //let speechRecognitionList = new SpeechGrammar();
+
+    recognition.interimResults = true; // 끝까지 듣기
+
+    //speechRecognitionList.addFromString(grammar, 1);
+    //recognition.grammars = speechRecognitionList;
+    //recognition.continuous = false;
+    recognition.lang = 'en-US';
+    recognition.maxAlternatives = 1;
+
+    recognition.addEventListener('result',(e)=>{
+        text = Array.from(e.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join('');
+
+            p.innerText = text;
+
+        console.log(text);
+    })
+
+    recognition.addEventListener('end', ()=>{
+        recognition.stop();
+    })
+
+    recognition.start();
+    
+    //2단계 : 녹음 된 거 저장 하고 보여주기
+
+    //3단계 : 녹음 된 거랑 loop-1 번째의 studysentence의 내용일치 확률 계산
+
+    //4단계 : 일치 확률이 90% 이상이면 맞는 걸로 판단
+
+    //5단계 speakinglearningroutine() 호출
+
+}
+
+function grammarlearning(){
+
+    let question = document.getElementById('question');
+    let examples = document.getElementById('examples');
+
+    examples.innerHTML = `  <input class="realbutton" type="button" id="startstudy" value="다시하기" onclick="grammarlearning()">
+                            <input class="realbutton" type="button" id="endstudy" value="다음학습" onclick="grammarlearningroutine()">
+                            <input class="realbutton" type="button" id="endstudy" value="학습마침" onclick="EndStudy()">
+                        `;
+}
+
+function grammarlearningroutine(){
+
+    EndStudy();
+
 }
